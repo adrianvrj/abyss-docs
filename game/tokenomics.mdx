@@ -1,120 +1,121 @@
 ---
 title: "Tokenomics"
-description: "CHIP token economics and utility in the Abyss ecosystem"
+description: "CHIP token economics, distribution, and utility in the Abyss ecosystem"
 ---
 
-## CHIP Token
+## Total Supply
 
-**CHIP** is the native ERC20 token of the Abyss ecosystem, used for all in-game transactions.
+The total supply of the **CHIP** token is **10,000,000 tokens**, distributed between community allocations and team reserves to ensure sustainable growth of the Abyss ecosystem.
 
-### Token Utility
+## Distribution Breakdown
 
-| Use Case | Description |
-|----------|-------------|
-| **Session Entry** | Deposit CHIP to enter competitive sessions |
-| **Market Purchases** | Buy items from the in-game market |
-| **Relic Minting** | Mint new relic NFTs |
-| **Prize Pool** | CHIP contributes to prize pool rewards |
+### Community Allocation: 7,000,000 (70%)
 
-## Token Flow
+The majority of CHIP tokens are allocated to the community through gameplay and ecosystem initiatives.
 
-```mermaid
-flowchart LR
-    subgraph Players
-        P1[Player 1]
-        P2[Player 2]
-        P3[Player 3]
-    end
-    
-    subgraph Game
-        S[Session Deposits]
-        M[Market Purchases]
-        R[Relic Minting]
-    end
-    
-    subgraph Treasury
-        PP[Prize Pool]
-        T[Treasury]
-    end
-    
-    P1 --> S
-    P2 --> S
-    P3 --> S
-    S --> PP
-    
-    P1 --> M --> T
-    P2 --> R --> T
-```
+#### Gameplay Rewards: 6,000,000 (60%)
+- Earned by playing the game
+- Formula: `CHIP_EARNED = floor(SCORE / 20)`
+- Boost promotions during launch phases
 
-## Session Economics
+| Score | CHIP Earned |
+|------:|------------:|
+| 100   | 5           |
+| 250   | 12          |
+| 500   | 25          |
+| 1000  | 50          |
+
+#### NFT Drops: 500,000 (5%)
+- Distributed through relic NFT mints
+- Special event rewards
+- Community competitions
+
+#### Liquidity: 500,000 (5%)
+- DEX liquidity provision
+- Ensures healthy trading markets
+
+### Team Allocation: 3,000,000 (30%)
+
+#### Team & Development: 1,500,000 (15%)
+- Core development team compensation
+- Long-term alignment with ecosystem success
+
+#### Treasury: 1,500,000 (15%)
+- DAO-controlled treasury for ecosystem development
+- Partnership funding
+- Marketing and growth initiatives
+
+## Session Pricing
+
+<Note>
+All game sessions are competitive and contribute to the prize pool.
+</Note>
 
 ### Entry Cost
 - **Fixed price: $1 USD equivalent**
-- Payable in: **ETH, STRK**, or other allowed ERC20 tokens
-- Price calculated at time of session creation
+- Payable in: **ETH, STRK, USDC, LORDS, CHIP**, or other allowed ERC-20 tokens
+- Price calculated at session creation
 
-### Prize Pool Distribution
-- **50%** of each entry goes to the prize pool
-- **50%** goes to the treasury/operations
-- Top 5 players share the accumulated prize pool
+### Revenue Distribution
 
-## Market Economics
+| Destination | Share |
+|-------------|------:|
+| Prize Pool  | 50%   |
+| Treasury    | 30%   |
+| Team        | 20%   |
 
-### Buying Items
-- Items cost a portion of your **current session score**
-- Score spent on items is permanent (doesn't return if session ends)
-- Items provide bonuses only for the current session
+## CHIP Earning Boosts
 
-### Market Refresh
-- Refreshing the market for new items costs score
-- The **Inferno relic** provides one free refresh
+Players earn CHIP tokens based on their final session score. During launch, promotional boosts increase earnings:
 
-## Relic Minting
+| Phase | Duration | Multiplier |
+|-------|----------|:----------:|
+| Launch | Week 1 | 1x |
+| Boost | Weeks 2-4 | 4x |
+| Sustain | After Week 4 | 2x (until exhausted) |
 
-### Minting Cost
-- Relics are minted by spending CHIP tokens
-- Each relic type has a limited supply
-- Minting cost may vary by relic rarity
+<Tip>
+Play during the Boost phase (Weeks 2-4) to maximize your CHIP earnings with 4x multiplier!
+</Tip>
 
-### Secondary Market
-- Relics are ERC721 NFTs and fully tradeable
-- Players can buy/sell on any Starknet NFT marketplace
+## Value Accrual Mechanisms
 
-## Prize Distribution
+### Prize Pool
+- 50% of all session fees flow to the prize pool
+- Distributed to top 5 leaderboard players each season
+- Multiple tokens accumulate (ETH, STRK, etc.)
 
-### Multi-Token Support
-The prize pool can hold multiple token types:
-- **CHIP** - Native game token
-- **ETH** - Ethereum
-- **STRK** - Starknet token
-- Additional tokens as added by admin
+### Treasury
+The CHIP treasury enables:
+- **Buybacks** - Token buyback programs
+- **Development** - Funding new features
+- **Partnerships** - Ecosystem collaborations
+- **Liquidity** - DEX liquidity incentives
 
-### Distribution Percentages
-| Rank | Share |
-|------|-------|
-| 1st | 40% |
-| 2nd | 25% |
-| 3rd | 18% |
-| 4th | 10% |
-| 5th | 7% |
+## Relic NFT Integration
 
-## Contract Addresses
+Relic NFTs provide in-game advantages and are part of the CHIP economy:
 
-<Note>
-These are Starknet Sepolia testnet addresses. Mainnet addresses will be published at launch.
-</Note>
+- **Minting cost** - CHIP tokens burned on mint
+- **Limited supply** - Creates scarcity and collectibility
+- **Tradeable** - Full ERC721 marketplace support
 
-| Contract | Purpose |
-|----------|---------|
-| **Abyss Game** | Main game logic, sessions, leaderboard |
-| **CHIP Token** | ERC20 token contract |
-| **Relic NFT** | ERC721 relic collection |
+### Genesis Relics (First Drop)
+- 5 unique relic types
+- Powerful in-game abilities
+- One-time exclusive mint
+
+## No Lockups
+
+- All CHIP earned through gameplay is immediately liquid
+- No vesting schedules for player earnings
+- Team tokens follow standard vesting
 
 ## Economic Sustainability
 
-The Abyss economy is designed to be sustainable:
+The Abyss economy is designed for long-term sustainability:
 
-1. **Zero-sum prize pool** - Player deposits fund player rewards
-2. **Market sinks** - Score spent on items is burned (not recoverable)
-3. **Relic scarcity** - Limited supply creates collectible value
-4. **Competitive incentive** - Prize pool motivates continued play
+1. **Play-to-earn** - CHIP minted through gameplay rewards skill
+2. **Prize pool** - Competitive sessions fund real prizes
+3. **Burning mechanisms** - Relic mints reduce supply
+4. **Treasury growth** - 30% of sessions fund development
