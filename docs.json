@@ -1,68 +1,57 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Abyss Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#FF841C",
+    "light": "#FFA54C",
+    "dark": "#CC6A16"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Game Guide",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "game/how-to-play"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Game Features",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "game/relics",
+              "game/market",
+              "game/prizes"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Economy",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "game/tokenomics"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Technical",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Smart Contracts",
             "pages": [
-              "api-reference/introduction"
+              "contracts/overview",
+              "contracts/sessions"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Integrations",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "technical/vrf",
+              "technical/controller",
+              "technical/frontend"
             ]
           }
         ]
@@ -71,52 +60,47 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Play Abyss",
+          "href": "https://play.abyssgame.fun",
+          "icon": "gamepad"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "GitHub",
+          "href": "https://github.com/adrianvrj/abyss",
+          "icon": "github"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Play",
+        "href": "https://play.abyssgame.fun"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Launch Game",
+      "href": "https://play.abyssgame.fun"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/abyssdotfun",
+      "github": "https://github.com/adrianvrj/abyss"
     }
   }
 }

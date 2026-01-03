@@ -1,0 +1,114 @@
+---
+title: "How to Play"
+description: "Learn the basics of playing Abyss - the on-chain slot machine game"
+---
+
+## Game Overview
+
+Abyss is a skill-based slot machine where your strategy with items, relics, and risk management determines your success. The goal is to achieve the highest score possible before running out of spins or triggering the deadly 666.
+
+## Starting a Session
+
+1. **Connect your wallet** using Cartridge Controller
+2. **Pay the $1 entry fee** (payable in ETH, STRK, or other allowed tokens)
+3. **Start playing** - 50% of your entry goes to the prize pool
+
+<Note>
+All sessions are competitive! Every game contributes to the prize pool where top players win real prizes.
+</Note>
+
+## The Slot Machine
+
+The game features a **5×3 grid** with 6 different symbols:
+
+<Columns cols={3}>
+  <Card>
+    <img src="/images/symbols/diamond.png" alt="Diamond" width="48" />
+    **Diamond** - 50 pts (10%)
+  </Card>
+  <Card>
+    <img src="/images/symbols/seven.png" alt="Seven" width="48" />
+    **Seven** - 30 pts (15%)
+  </Card>
+  <Card>
+    <img src="/images/symbols/cherry.png" alt="Cherry" width="48" />
+    **Cherry** - 20 pts (20%)
+  </Card>
+  <Card>
+    <img src="/images/symbols/lemon.png" alt="Lemon" width="48" />
+    **Lemon** - 15 pts (20%)
+  </Card>
+  <Card>
+    <img src="/images/symbols/coin.png" alt="Coin" width="48" />
+    **Coin** - 10 pts (25%)
+  </Card>
+  <Card>
+    <img src="/images/symbols/six.png" alt="Six" width="48" />
+    **Six** - 0 pts (10%) ⚠️
+  </Card>
+</Columns>
+
+<Warning>
+The **Six (6)** symbol is dangerous! Getting 666 in a pattern ends your game immediately.
+</Warning>
+
+## Spinning
+
+- Click the slot machine or lever to spin
+- Each spin costs 1 spin from your remaining spins
+- You start each level with **5 spins**
+- All randomness is generated using **Cartridge VRF** for provable fairness
+
+## Scoring Patterns
+
+Match 3 or more identical symbols in a line to score:
+
+### Pattern Multipliers
+
+| Pattern | Description | Multiplier |
+|---------|-------------|------------|
+| Horizontal 3 | 3 in a row | 1x |
+| Horizontal 4 | 4 in a row | 2x |
+| Horizontal 5 | 5 in a row | 3x |
+| Vertical 3 | 3 in a column | 1.5x |
+| Diagonal 3 | 3 diagonally | 1.5x |
+| **Jackpot** | All 15 same | 10x |
+
+**Score Calculation:**
+```
+Pattern Score = Symbol Points × Count × Multiplier
+```
+
+## Leveling Up
+
+- Each level has a **score threshold** you must reach
+- Reaching the threshold advances you to the next level
+- You get **5 new spins** when leveling up
+- Thresholds increase with each level
+
+<Tip>
+Higher levels have higher 666 risk but also offer better scoring opportunities with items and relics.
+</Tip>
+
+## The 666 Risk
+
+The most dangerous mechanic in Abyss:
+
+- Getting **three 6s in a pattern** instantly ends your session
+- The **probability increases** with each level (starts at 1.5%, can reach 15%+)
+- You lose ALL current session points if 666 triggers
+- Some items like **La Biblia** can save you once from 666
+
+## Game Over Conditions
+
+Your session ends when:
+1. ❌ **666 triggered** - Three 6s in a pattern
+2. ⏱️ **No spins left** - Run out of spins without reaching level threshold
+3. 🏆 **Manual end** - You can end your session to lock in your score
+
+## Tips for Success
+
+1. **Buy items early** - Use the Market to boost your symbols and multipliers
+2. **Manage risk** - Higher levels mean higher 666 risk; know when to stop
+3. **Use relics wisely** - Relic abilities have cooldowns, time them strategically
+4. **Watch the thresholds** - Don't run out of spins before reaching the next level

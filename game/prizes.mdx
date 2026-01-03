@@ -1,0 +1,111 @@
+---
+title: "Prizes & Leaderboard"
+description: "Compete for real token prizes on the global leaderboard"
+---
+
+## Prize Pool System
+
+Abyss features a competitive prize pool where players compete for real token rewards.
+
+### How it Works
+
+1. **Every session costs $1** (payable in ETH, STRK, or other allowed tokens)
+2. **50% of each entry** goes to the prize pool
+3. At season end, prizes are **distributed to top 5 players**
+4. Multiple tokens accumulate in the prize pool
+
+## Leaderboard
+
+The global leaderboard ranks all players by their **highest session score**.
+
+<Note>
+Only scores from **competitive sessions** (with CHIP deposit) count for the leaderboard.
+</Note>
+
+### Ranking Criteria
+- **Primary:** Highest total score achieved in a single session
+- **Tiebreaker:** Earlier timestamp wins
+
+## Prize Distribution
+
+When prizes are distributed, the top 5 players receive:
+
+| Rank | Prize Share |
+|------|-------------|
+| 🥇 **1st Place** | 40% |
+| 🥈 **2nd Place** | 25% |
+| 🥉 **3rd Place** | 18% |
+| **4th Place** | 10% |
+| **5th Place** | 7% |
+
+### Dynamic Distribution
+
+If fewer than 5 players are on the leaderboard:
+
+| Players | Distribution |
+|---------|--------------|
+| 1 player | 100% to 1st |
+| 2 players | 60% / 40% |
+| 3 players | 50% / 30% / 20% |
+| 4 players | 43% / 27% / 19% / 11% |
+| 5+ players | 40% / 25% / 18% / 10% / 7% |
+
+## Multi-Token Prize Pool
+
+The prize pool can hold **multiple tokens**:
+
+- **ETH** - Ethereum
+- **STRK** - Starknet token
+- **CHIP** - Game native token
+- Other ERC20 tokens added by admin
+
+Each token is distributed separately according to the same percentages.
+
+### Viewing the Prize Pool
+
+You can view the current prize pool from:
+1. The **Leaderboard page** - Click "View Prize Pool"
+2. Directly querying the contract
+
+```typescript
+// Get all prize tokens and their balances
+const balances = await getPrizeTokenBalances();
+// Returns: [{ address, symbol, balance }, ...]
+```
+
+## Contract Functions
+
+### Adding Tokens to Prize Pool
+```cairo
+fn add_prize_token(ref self: ContractState, token_address: ContractAddress)
+```
+Admin function to whitelist a new token for the prize pool.
+
+### Distributing Prizes
+```cairo
+fn distribute_prizes(ref self: ContractState)
+```
+Admin function to distribute all prize tokens to top 5 leaderboard players.
+
+### Checking Balances
+```cairo
+fn get_prize_token_balances(self: @ContractState) -> Array<PrizeTokenBalance>
+```
+Returns all whitelisted tokens and their current balances in the contract.
+
+## Season System
+
+<Info>
+Seasons are managed by the game admin. At the end of each season:
+
+1. Prizes are distributed to top 5
+2. Leaderboard is reset
+3. New season begins with fresh prize pool
+</Info>
+
+## Tips for Competing
+
+1. **Go for high scores** - Don't play it safe; high-risk strategies can pay off
+2. **Use relics strategically** - Phantom's double score can boost you up the ranks
+3. **Time your sessions** - Play when you can focus and use all your spins effectively
+4. **Watch the leaderboard** - Know what score you need to beat for top 5

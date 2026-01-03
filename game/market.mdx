@@ -1,0 +1,98 @@
+---
+title: "Market & Items"
+description: "In-game market system and purchasable items"
+---
+
+## Market Overview
+
+The in-game market lets you purchase items using your **session score**. Items provide bonuses that last for the current session only.
+
+<Warning>
+Score spent on items is **permanent** - you cannot recover it even if your session ends poorly!
+</Warning>
+
+## How the Market Works
+
+1. **Access Market** - Click the shop icon during gameplay
+2. **View Items** - See 3 available items per refresh
+3. **Purchase** - Spend score to buy items
+4. **Refresh** - Pay score (or use Inferno relic) for new items
+
+## Item Categories
+
+### Score Boosters
+Increase the base points of specific symbols.
+
+| Item | Effect | Example |
+|------|--------|---------|
+| Diamond Polish | +X pts to Diamond | Diamond: 50 → 60 pts |
+| Lucky Seven | +X pts to Seven | Seven: 30 → 40 pts |
+| Cherry Juice | +X pts to Cherry | Cherry: 20 → 28 pts |
+
+### Pattern Multipliers
+Increase multipliers for specific pattern types.
+
+| Item | Effect |
+|------|--------|
+| Horizontal Focus | +0.5x to horizontal patterns |
+| Vertical Master | +0.5x to vertical patterns |
+| Diagonal Vision | +0.5x to diagonal patterns |
+
+### Utility Items
+
+#### La Biblia
+<Card title="666 Protection" icon="book">
+**Effect:** Saves you once from a 666 game over
+
+When 666 would trigger, La Biblia is consumed and you continue playing. This is the only way to survive 666!
+</Card>
+
+#### Spin Tokens
+<Card title="Extra Spins" icon="rotate-right">
+**Effect:** Adds bonus spins when leveling up
+
+Instead of getting 5 spins per level, you get 5 + bonus.
+</Card>
+
+## Item Stacking
+
+Multiple items of the same type **stack additively**:
+
+```
+Example: Two "+5 Diamond" boosters
+Diamond base: 50 pts
+After items: 50 + 5 + 5 = 60 pts
+```
+
+## Market Refresh
+
+### Cost
+- Refreshing the market costs a percentage of score
+- Cost increases with each refresh
+
+### Free Refresh (Inferno Relic)
+- The **Inferno** relic provides one free market refresh
+- After using, normal refresh costs apply
+
+## Strategy Tips
+
+1. **Early Investment** - Buy score boosters early to maximize benefit over many spins
+2. **La Biblia Priority** - If available, consider buying protection against 666
+3. **Pattern Synergy** - Combine pattern multipliers with score boosters for maximum effect
+4. **Risk vs Reward** - Higher item costs mean less score buffer if you lose
+
+## Technical: Item Effects
+
+Items are stored per-session in the contract:
+
+```cairo
+struct SessionItem {
+    item_id: u32,
+    quantity: u32,
+}
+```
+
+Effects are applied during:
+- **Score calculation** - Symbol and pattern bonuses
+- **666 check** - La Biblia consumption
+- **Level up** - Spin bonus application
