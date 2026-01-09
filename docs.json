@@ -24,6 +24,7 @@
             "group": "Game Features",
             "pages": [
               "game/relics",
+              "game/charms",
               "game/market",
               "game/prizes"
             ]
