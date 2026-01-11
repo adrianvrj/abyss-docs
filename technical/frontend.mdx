@@ -90,20 +90,18 @@ const {
 } = useController();
 ```
 
-### useGameContract
-Provides contract interaction functions:
+### useAbyssGame
+Provides contract interaction functions and manages optimistic state:
 
 ```typescript
 const {
-    createSession,
     requestSpin,
     getSessionData,
-    getLastSpinResult,
-    endSession,
-    equipRelic,
-    activateRelic,
+    buyItem,
+    refreshMarket,
+    optimisticItems,
     // ... more functions
-} = useGameContract();
+} = useAbyssGame();
 ```
 
 ## State Management
@@ -137,11 +135,10 @@ sequenceDiagram
     Hook->>Account: execute([{...}])
     Note over Account: Controller signs
     Account->>Contract: request_spin
-    Contract-->>Account: Transaction hash
-    Account-->>Hook: Wait for confirmation
-    Hook->>Contract: get_last_spin_result
-    Contract-->>Hook: SpinResult
-    Hook-->>UI: Update state
+    Contract-->>Account: Transaction Receipt (Pre-Confirmed)
+    Account-->>Hook: Parsed Events
+    Hook-->>UI: Update state immediately (Optimistic)
+    Note over UI: No polling needed for result
 ```
 
 ## Pattern Detection
